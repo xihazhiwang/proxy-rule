@@ -25,8 +25,8 @@
  {
    "servers": 
    [
-     {"tag": "dns_direct", "address": "192.168.51.4", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "全球直连"},
-     {"tag": "dns_proxy", "address": "192.168.51.4", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "全球直连"}
+     {"tag": "dns_direct", "address": "119.29.29.29", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "全球直连"},
+     {"tag": "dns_proxy", "address": "8.8.8.8", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "节点选择"}
    ],
    "rules": 
    [
@@ -80,29 +80,30 @@
     { "tag": "全球直连", "type": "direct" }
   ],
   
-  "route": {
-    "auto_detect_interface": true,
-    "final": "漏网之鱼",
-    "rules": 
-    [
-      {"action": "sniff"},
-      {"protocol": "dns", "action": "hijack-dns"},
-      {"clash_mode": "direct", "outbound": "全球直连"},
-      {"clash_mode": "global", "outbound": "GLOBAL"},
-      {"domain": ["clash.razord.top", "yacd.metacubex.one", "yacd.haishan.me", "d.metacubex.one"], "outbound": "全球直连"},
-      {"rule_set": ["geosite-apple", "geoip-apple"], "outbound": "全球直连"},
-      {"rule_set": ["geosite-private", "geoip-private", "geoip-cn", "geosite-cn", "geosite-games-cn"], "outbound": "全球直连"},
-      {"rule_set": ["geosite-gfw"], "outbound": "节点选择"}
-    ],
-    "rule_set": [
-      { "tag": "geosite-apple", "type": "remote", "format": "source", "url": "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/apple.json", "download_detour": "全球直连" },
-      { "tag": "geosite-cn", "type": "remote", "format": "source", "url": "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/cn.json", "download_detour": "全球直连" },
-      { "tag": "geosite-private", "type": "remote", "format": "source", "url": "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/private.json", "download_detour": "全球直连" },
-      { "tag": "geosite-gfw", "type": "remote", "format": "source", "url": "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/gfw.json", "download_detour": "全球直连" },
-      { "tag": "geosite-games-cn", "type": "remote", "format": "source", "url": "https://gh-proxy.com/raw.githubusercontent.com/lateautumn2/ruleset_geodata/refs/heads/sing-box-ruleset/games-cn.json", "download_detour": "全球直连" },
-      { "tag": "geoip-apple", "type": "remote", "format": "source", "url": "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo-lite/geoip/apple.json", "download_detour": "全球直连" },
-      { "tag": "geoip-cn", "type": "remote", "format": "source", "url": "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/cn.json", "download_detour": "全球直连" },
-      { "tag": "geoip-private", "type": "remote", "format": "source", "url": "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/private.json", "download_detour": "全球直连" }
-    ]
-  }
+  "route": 
+ {
+   "auto_detect_interface": true,
+   "final": "漏网之鱼",
+   "rules": 
+   [
+     {"action": "sniff"},
+     {"protocol": "dns", "action": "hijack-dns"},
+     {"clash_mode": "direct", "outbound": "全球直连"},
+     {"clash_mode": "global", "outbound": "GLOBAL"},
+     {"domain": ["clash.razord.top", "yacd.metacubex.one", "yacd.haishan.me", "d.metacubex.one"], "outbound": "全球直连"},
+     {"rule_set": ["geosite-apple", "geoip-apple"], "outbound": "全球直连"},
+     {"rule_set": ["geosite-private", "geoip-private", "geoip-cn", "geosite-cn", "geosite-games-cn"], "outbound": "全球直连"},
+     {"rule_set": ["geosite-gfw"], "outbound": "节点选择"}
+   ],
+   "rule_set": [
+    { "tag": "geosite-apple", "type": "remote", "format": "source", "url": "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/apple.json", "download_detour": "全球直连" },
+    { "tag": "geosite-cn", "type": "remote", "format": "source", "url": "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/cn.json", "download_detour": "全球直连" },
+    { "tag": "geosite-private", "type": "remote", "format": "source", "url": "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/private.json", "download_detour": "全球直连" },
+    { "tag": "geosite-gfw", "type": "remote", "format": "source", "url": "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/gfw.json", "download_detour": "全球直连" },
+    { "tag": "geosite-games-cn", "type": "remote", "format": "source", "url": "https://gh-proxy.com/raw.githubusercontent.com/lateautumn2/ruleset_geodata/refs/heads/sing-box-ruleset/games-cn.json", "download_detour": "全球直连" },
+    { "tag": "geoip-apple", "type": "remote", "format": "source", "url": "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo-lite/geoip/apple.json", "download_detour": "全球直连" },
+    { "tag": "geoip-cn", "type": "remote", "format": "source", "url": "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/cn.json", "download_detour": "全球直连" },
+    { "tag": "geoip-private", "type": "remote", "format": "source", "url": "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/private.json", "download_detour": "全球直连" }
+  ]
+}
 }
