@@ -95,7 +95,7 @@
       {"clash_mode": "global", "outbound": "GLOBAL"},
       {"domain": ["clash.razord.top", "yacd.metacubex.one", "yacd.haishan.me", "d.metacubex.one"], "outbound": "全球直连"},
       {"rule_set": ["geosite-apple", "geoip-apple"], "outbound": "全球直连"},
-      {"rule_set": ["geosite-private", "geosite-cn", "category-games-cn.json"], "outbound": "全球直连"},
+      {"rule_set": ["geosite-private", "geosite-cn", "category-games-cn.json", "geosite-tencent-cn"], "outbound": "全球直连"},
       {"rule_set": ["geoip-private", "geoip-cn"], "outbound": "全球直连"},
       {"rule_set": ["geosite-gfw"], "outbound": "节点选择"},
       {"rule_set": ["geoip-telegram"], "outbound": "节点选择"}
@@ -106,6 +106,7 @@
       { "tag": "geosite-private", "type": "remote", "format": "source", "url": "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/private.json", "download_detour": "全球直连" },
       { "tag": "geosite-gfw", "type": "remote", "format": "source", "url": "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/gfw.json", "download_detour": "全球直连" },
       { "tag": "category-games-cn.json", "type": "remote", "format": "source", "url": "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/category-games-cn.json", "download_detour": "全球直连" },
+      { "tag": "geosite-tencent-cn", "type": "remote", "format": "source", "url": "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/tencent@cn.json", "download_detour": "全球直连" },
       { "tag": "geoip-apple", "type": "remote", "format": "source", "url": "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo-lite/geoip/apple.json", "download_detour": "全球直连" },
       { "tag": "geoip-cn", "type": "remote", "format": "source", "url": "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/cn.json", "download_detour": "全球直连" },
       { "tag": "geoip-telegram", "type": "remote", "format": "source", "url": "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/telegram.json", "download_detour": "全球直连" },
